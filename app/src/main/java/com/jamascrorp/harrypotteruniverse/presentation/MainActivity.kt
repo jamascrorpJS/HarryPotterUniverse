@@ -1,7 +1,8 @@
-package com.example.harrypotteruniverse
+package com.jamascrorp.harrypotteruniverse.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jamascrorp.harrypotteruniverse.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
