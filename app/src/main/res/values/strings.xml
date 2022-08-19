@@ -1,19 +1,47 @@
 <resources>
     <string name="app_name">HarryPotterUniverse</string>
-
-    <string-array name="question">
-        <item>Фамилия Гермионы могла бы быть "Пакл"</item>
-        <item>Сириус Блэк боялся иголок</item>
-        <item>Джоан Роулинг хотела убить персонажа Рона Уизли</item>
-        <item>Маглы способны видеть Хогвартс</item>
-        <item>У семейства Лавгуд в саду растут сливы-цепелины</item>
-        <item>Каждый год Молли Уизли присылает своим детям и Гарри связанные вручную свитера</item>
-        <item>Гарри Поттер получил мантию-неведимку на свой день рождения</item>
-        <item>Патронус Полумны Лавгуд - лев</item>
-        <item>Хагрид уговаривал великанов перейти на сторону Ордена Феникса в пятой части книг</item>
-        <item>Боггарт Симуса Финнигана - ведьма Банши</item>
-        <item>На месте дома семейства Уизли стоял свинарник</item>
-        <item>Рон произнес имя Волан-де-Морта 7 раз за все книги о Гарри Поттере</item>
-        <item>Гермиона видела себя министром магии в зеркале Еиналеж</item>
-    </string-array>
+    <string name="play">Играть</string>
+    <string name="photo">Фото</string>
+    <string name="trues">Правда</string>
+    <string name="falsees">Ложь</string>
+    <string name="choice">Вы нажали: %1$s</string>
+    <string name="verygood">А ты хорош</string>
+    <string name="all">Посмотреть ответы</string>
+    <string name="verygood0">Весьма неплохо</string>
+    <string name="dobbi">Ты расстроил Добби</string>
+    <string name="main">На главную</string>
+    <string name="w1">Фамилия Гермионы могла бы быть "Пакл"</string>
+    <string name="w2">Сириус Блэк боялся иголок</string>
+    <string name="w3">Джоан Роулинг хотела убить персонажа Рона Уизли</string>
+    <string name="w4">Маглы способны видеть Хогвартс</string>
+    <string name="w5">У семейства Лавгуд в саду растут сливы-цепелины</string>
+    <string name="w6">Каждый год Молли Уизли присылает своим детям и Гарри связанные вручную свитера</string>
+    <string name="w7">Гарри Поттер получил мантию-неведимку на свой день рождения</string>
+    <string name="w8">Патронус Полумны Лавгуд - лев</string>
+    <string name="w9">Хагрид уговаривал великанов перейти на сторону Ордена Феникса в пятой части книг</string>
+    <string name="w10">Боггарт Симуса Финнигана - ведьма Банши</string>
+    <string name="w11">На месте дома семейства Уизли стоял свинарник</string>
+    <string name="w12">Рон произнес имя Волан-де-Морта 7 раз за все книги о Гарри Поттере</string>
+    <string name="w13">Гермиона видела себя министром магии в зеркале Еиналеж</string>
+    <string name="save">Сохранить в Галерею</string>
+    <string name="saveSuccess">Сохранено</string>
+    <string name="chars">Персонажи</string>
+    <string name="alternate">Другое имя</string>
+    <string name="species">Вид</string>
+    <string name="gender">Пол</string>
+    <string name="house">Факультет</string>
+    <string name="date">Дата рождения</string>
+    <string name="birth">Год рождения</string>
+    <string name="wizards">Волшебник</string>
+    <string name="ancestry">Происхождение</string>
+    <string name="eyeColor">Цвет глаз</string>
+    <string name="hairColor">Цвет волос</string>
+    <string name="patronous">Патронус</string>
+    <string name="student">Студент</string>
+    <string name="staffs">Учитель</string>
+    <string name="actor">Актер</string>
+    <string name="alive">Живой</string>
+    <string name="image">Image</string>
+    <string name="wand">Палочка</string>
+    <string name="Wand" translatable="false">%1$s, %2$s, %3$s</string>
 </resources>

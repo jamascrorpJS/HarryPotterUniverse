@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gold">#987B1A</color>
+    <color name="second">#F5D776</color>
+    <color name="background">#C3A895</color>
+    <color name="falls">#E91E63</color>
+
+    <color name="recycle">#9A8663</color>
 </resources>
