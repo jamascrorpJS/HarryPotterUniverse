@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HarryPotterUniverse</string>
+    <string name="play">Play</string>
+    <string name="photo">Photo</string>
+    <string name="trues">True</string>
+    <string name="falsees">False</string>
+    <string name="choice">You clicked: %1$s</string>
+
+    <string name="w1">Hermione\'s last name could have been "Puckle"</string>
+    <string name="w2">Sirius Black was afraid of needles</string>
+    <string name="w3">JK Rowling wanted to kill Ron Weasley\'s character</string>
+    <string name="w4">Muggles can see Hogwarts</string>
+    <string name="w5">The Lovegood family grows zeppelin plums in their garden.</string>
+    <string name="w6">Every year, Molly Weasley sends hand-knitted sweaters to her children and Harry.</string>
+    <string name="w7">Harry Potter received an invisibility cloak for his birthday</string>
+    <string name="w8">Patronus Luna Lovegood - lion</string>
+    <string name="w9">Hagrid persuaded the giants to defect to the Order of the Phoenix in the fifth part of the books</string>
+    <string name="w10">Seamus Finnigan\'s Boggart - Banshee Witch</string>
+    <string name="w11">Where the Weasley family home used to be was a pigsty.</string>
+    <string name="w12">Ron said Voldemort\'s name 7 times in all the Harry Potter books</string>
+    <string name="w13">Hermione saw herself as the Minister of Magic in the Mirror of Erised</string>
+    <string name="verygood">Great</string>
+    <string name="verygood0">Not bad</string>
+    <string name="dobbi">You make cry Dobbi</string>
+    <string name="all">See answer</string>
+    <string name="main">"Back to "</string>
+    <string name="save">Save to gallery</string>
+    <string name="saveSuccess">Save success</string>
+    <string name="alternate">Alternate Names</string>
+    <string name="species">Species</string>
+
+    <string name="gender">Gender</string>
+    <string name="house">House</string>
+    <string name="date">Date of birth</string>
+    <string name="birth">Year of birth</string>
+    <string name="wizards">Wizards</string>
+    <string name="ancestry">Ancestry</string>
+    <string name="eyeColor">Eye Color</string>
+    <string name="hairColor">Hair Color</string>
+    <string name="patronous">Patronous</string>
+    <string name="chars">Person</string>
+    <string name="student">Hogwart\'s Student</string>
+    <string name="staffs">Hogwart\'s Staff</string>
+    <string name="actor">Actor</string>
+    <string name="alive">Alive</string>
+    <string name="image">Image</string>
+    <string name="wand">Wand</string>
+</resources>

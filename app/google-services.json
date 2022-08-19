@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "976572183685",
+    "firebase_url": "https://harrypotter-be7a8-default-rtdb.firebaseio.com",
+    "project_id": "harrypotter-be7a8",
+    "storage_bucket": "harrypotter-be7a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976572183685:android:50304dc9e1a769f05fe5ec",
+        "android_client_info": {
+          "package_name": "com.example.harrypotter2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976572183685-d0l3vo4gbcug0diq6qc5ej4ditc2qmia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSevpObJa4YE2xRdH0RkP9aC-3ebrH0FM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976572183685-d0l3vo4gbcug0diq6qc5ej4ditc2qmia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976572183685:android:e0b93814109f15f55fe5ec",
+        "android_client_info": {
+          "package_name": "com.jamascrorp.harrypotteruniverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976572183685-d0l3vo4gbcug0diq6qc5ej4ditc2qmia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSevpObJa4YE2xRdH0RkP9aC-3ebrH0FM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976572183685-d0l3vo4gbcug0diq6qc5ej4ditc2qmia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

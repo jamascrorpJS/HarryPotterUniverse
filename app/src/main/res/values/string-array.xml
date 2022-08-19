@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="question">
+        <item>@string/w1</item>
+        <item>@string/w2</item>
+        <item>@string/w3</item>
+        <item>@string/w4</item>
+        <item>@string/w5</item>
+        <item>@string/w6</item>
+        <item>@string/w7</item>
+        <item>@string/w8</item>
+        <item>@string/w9</item>
+        <item>@string/w10</item>
+        <item>@string/w11</item>
+        <item>@string/w12</item>
+        <item>@string/w13</item>
+    </string-array>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment">
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.jamascrorp.harrypotteruniverse.presentation.FragmentGame.GameFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.jamascrorp.harrypotteruniverse.presentation.FragmentResult.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="result"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_resultFragment_to_finalFragment"
+            app:destination="@id/finalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.jamascrorp.harrypotteruniverse.presentation.FragmentFinal.FinalFragment"
+        android:label="FinalFragment"
+        tools:layout="@layout/fragment_final">
+        <action
+            android:id="@+id/action_finalFragment_to_fragment"
+            app:destination="@id/fragment"
+
+            app:popUpTo="@id/fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.jamascrorp.harrypotteruniverse.presentation.FragmentMain.Fragment"
+        android:label="Fragment"
+        tools:layout="@layout/fragment">
+        <action
+            android:id="@+id/action_fragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_fragment_to_imageBonus"
+            app:destination="@id/imageBonus" />
+        <action
+            android:id="@+id/action_fragment_pop"
+            app:popUpTo="@id/fragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragment_to_aboutCharsFragment"
+            app:destination="@id/aboutCharsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageBonus"
+        android:name="com.jamascrorp.harrypotteruniverse.presentation.BonusDownloadImage.ImageBonus"
+        android:label="ImageBonus"
+        tools:layout="@layout/bonus_image_fragment">
+        <action
+            android:id="@+id/action_imageBonus_to_image"
+            app:destination="@id/image" />
+    </fragment>
+    <fragment
+        android:id="@+id/image"
+        android:name="com.jamascrorp.harrypotteruniverse.presentation.BonusDownloadImage.Image"
+        android:label="Image"
+        tools:layout="@layout/image">
+        <argument
+            android:name="url"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutCharsFragment"
+        android:name="com.jamascrorp.harrypotteruniverse.presentation.FragmentAboutChars.AboutCharsFragment"
+        android:label="AboutCharsFragment" />
+</navigation>
