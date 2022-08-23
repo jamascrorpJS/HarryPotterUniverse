@@ -6,22 +6,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.jamascrorp.harrypotteruniverse.R
 import com.jamascrorp.harrypotteruniverse.databinding.FragmentResultBinding
 import com.jamascrorp.harrypotteruniverse.presentation.GameVoice
+import com.jamascrorp.harrypotteruniverse.presentation.di.injector
+import javax.inject.Inject
 
 class ResultFragment : Fragment() {
 
     private var viewBinding: FragmentResultBinding? = null
     private val binding get() = viewBinding!!
 
-    private lateinit var viewModel: FragmentResultViewModel
+    @Inject
+    lateinit var viewModel: FragmentResultViewModel
     private lateinit var animationDrawable: AnimationDrawable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        (activity?.application as injector).createResultSubComponent()
+            .inject(this)
         activity?.startService(GameVoice.intent(activity?.applicationContext!!))
     }
 
@@ -31,6 +36,8 @@ class ResultFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         viewBinding = FragmentResultBinding.inflate(layoutInflater)
+        val args = ResultFragmentArgs.fromBundle(requireArguments()).result
+        viewModel.resultToPresentation(args)
         return binding.root
     }
 
@@ -40,9 +47,6 @@ class ResultFragment : Fragment() {
         val good = activity?.resources?.getString(R.string.verygood0)
         val dobbi = activity?.resources?.getString(R.string.dobbi)
 
-        viewModel = ViewModelProvider(this)[FragmentResultViewModel::class.java]
-        val args = ResultFragmentArgs.fromBundle(requireArguments()).result
-        viewModel.resultToPresentation(args)
         viewModel.LiveData1.observe(viewLifecycleOwner) {
             val text = it.percentOfTrueAnswer.toString() + "%"
             binding.percent.text = text

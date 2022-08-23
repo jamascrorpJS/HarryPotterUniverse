@@ -7,7 +7,7 @@ import retrofit2.Call
 class GetPersonUseCase(val repository: GameUseCaseRepository) {
 
 
-    operator fun invoke(): Call<List<Person>> {
+    suspend operator fun invoke(): Call<List<Person>> {
         return repository.getPerson()
     }
 }

@@ -5,10 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jamascrorp.harrypotteruniverse.databinding.FragmentAboutBinding
+import com.jamascrorp.harrypotteruniverse.presentation.di.injector
 import com.jamascrorp.harrypotteruniverse.presentation.recyclerview.adapters.FragmentAboutAdapter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 class AboutCharsFragment : Fragment() {
 
@@ -16,7 +22,14 @@ class AboutCharsFragment : Fragment() {
 
     private val ViewBinding get() = viewBinding!!
 
-    private lateinit var viewModel: AboutCharsFragmentViewModel
+    @Inject
+    lateinit var viewModel: AboutCharsFragmentViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity?.application as injector).createFragmentAboutChars()
+            .inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,7 +37,6 @@ class AboutCharsFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         viewBinding = FragmentAboutBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this)[AboutCharsFragmentViewModel::class.java]
         return ViewBinding.root
     }
 
@@ -33,8 +45,15 @@ class AboutCharsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         ViewBinding.recycle.layoutManager =
             LinearLayoutManager(activity?.applicationContext, LinearLayoutManager.HORIZONTAL, false)
-        viewModel.getResponse()
+        CoroutineScope(IO).launch {
+            withContext(Main) {
+                viewBinding?.progressbar?.visibility = View.VISIBLE
+            }
+            viewModel.getResponse()
+        }
+
         viewModel.liveData.observe(viewLifecycleOwner) {
+            ViewBinding.progressbar.visibility = View.GONE
             ViewBinding.recycle.adapter = FragmentAboutAdapter(it)
         }
     }

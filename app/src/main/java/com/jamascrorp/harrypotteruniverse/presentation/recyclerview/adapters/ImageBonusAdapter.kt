@@ -8,7 +8,7 @@ import com.jamascrorp.harrypotteruniverse.domain.entity.ImageList
 import com.jamascrorp.harrypotteruniverse.presentation.recyclerview.ImageListDiffUtilItemCallback
 import com.jamascrorp.harrypotteruniverse.presentation.recyclerview.viewholders.ImageBonusViewHolder
 
-class ImageBonusAdapter :
+class ImageBonusAdapter() :
     ListAdapter<ImageList, ImageBonusViewHolder>(ImageListDiffUtilItemCallback()) {
 
     var select: ((string: String?) -> Unit)? = null

@@ -53,11 +53,7 @@ class GameUseCaseRepositoryImpl(private val context: Context) : GameUseCaseRepos
         SaveClickOnTrueFalse.listOfClicks.add(correctAnswer)
     }
 
-    fun checkClicks(index: Int): Boolean {
-        return correctAnswers[index].answer == SaveClickOnTrueFalse.listOfClicks[index].answer
-    }
-
-    override fun getPerson(): Call<List<Person>> {
+    override suspend fun getPerson(): Call<List<Person>> {
         return Retrofit.personRetrofit.getPerson("characters")
     }
 

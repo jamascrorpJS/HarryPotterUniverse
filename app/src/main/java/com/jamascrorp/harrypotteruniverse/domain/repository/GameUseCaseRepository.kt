@@ -14,8 +14,10 @@ interface GameUseCaseRepository {
 
     fun checkQuestion(select: Boolean, index: Int): Boolean
 
+
     fun saveClicks(select: Boolean, index: Int)
 
-    fun getPerson(): Call<List<Person>>
+    suspend fun getPerson(): Call<List<Person>>
+
 
 }

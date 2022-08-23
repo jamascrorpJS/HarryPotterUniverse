@@ -5,15 +5,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jamascrorp.harrypotteruniverse.R
-import com.jamascrorp.harrypotteruniverse.data.GameUseCaseRepositoryImpl
 import com.jamascrorp.harrypotteruniverse.domain.SaveClickOnTrueFalse
+import com.jamascrorp.harrypotteruniverse.domain.usecases.SetClickUseCase
 import com.jamascrorp.harrypotteruniverse.presentation.recyclerview.viewholders.FinalFragmentViewHolder
+import javax.inject.Inject
 
-class FinalFragmentAdapter(private val context: Context) :
+class FinalFragmentAdapter @Inject constructor(
+    private val context: Context,
+    private val setClickUseCase: SetClickUseCase,
+) :
     RecyclerView.Adapter<FinalFragmentViewHolder>() {
 
     private val listOfClicks = SaveClickOnTrueFalse.listOfClicks
-    private val repositoryImpl = GameUseCaseRepositoryImpl(context)
 
     val trues = context.getString(R.string.trues)
     val falses = context.getString(R.string.falsees)
@@ -38,7 +41,7 @@ class FinalFragmentAdapter(private val context: Context) :
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when (repositoryImpl.checkClicks(position)) {
+        return when (setClickUseCase.invoke(position)) {
             true -> TRUE_LIST
             false -> FALSE_LIST
         }

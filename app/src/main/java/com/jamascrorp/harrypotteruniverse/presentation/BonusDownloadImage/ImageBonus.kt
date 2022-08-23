@@ -10,6 +10,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.jamascrorp.harrypotteruniverse.databinding.BonusImageFragmentBinding
 import com.jamascrorp.harrypotteruniverse.domain.entity.ImageList
 import com.jamascrorp.harrypotteruniverse.presentation.recyclerview.adapters.ImageBonusAdapter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 
 class ImageBonus : Fragment() {
     private var viewBinding: BonusImageFragmentBinding? = null
@@ -37,14 +40,18 @@ class ImageBonus : Fragment() {
     }
 
     private fun getFromFire() {
-        db = FirebaseFirestore.getInstance()
-        db.collection("Glide")
-            .get()
-            .addOnSuccessListener {
-                for (document in it) {
-                    val value: MutableList<ImageList> = it.toObjects(ImageList::class.java)
-                    adapter.submitList(value)
+        CoroutineScope(IO).launch {
+            binding.progressBar.visibility = View.VISIBLE
+            db = FirebaseFirestore.getInstance()
+            db.collection("Glide")
+                .get()
+                .addOnSuccessListener {
+                    for (document in it) {
+                        val value: MutableList<ImageList> = it.toObjects(ImageList::class.java)
+                        adapter.submitList(value)
+                        binding.progressBar.visibility = View.GONE
+                    }
                 }
-            }
+        }
     }
 }

@@ -6,20 +6,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.jamascrorp.harrypotteruniverse.databinding.FragmentGameBinding
 import com.jamascrorp.harrypotteruniverse.domain.SaveClickOnTrueFalse
 import com.jamascrorp.harrypotteruniverse.presentation.GameVoice
+import com.jamascrorp.harrypotteruniverse.presentation.di.injector
+import javax.inject.Inject
 
 class GameFragment : Fragment() {
 
     private var viewBinding: FragmentGameBinding? = null
     private val binding get() = viewBinding!!
-    private lateinit var viewModel: GameFragmentViewModel
+
+    @Inject
+    lateinit var viewModel: GameFragmentViewModelDI
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (activity?.application as injector).createGameSubComponent()
+            .inject(this)
         activity?.startService(GameVoice.intent(activity?.applicationContext!!))
         onBackPressFc()
     }
@@ -35,7 +40,6 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this)[GameFragmentViewModel::class.java]
         viewModel.getQuestionToPresentation()
 
         viewModel.questionLiveDats.observe(viewLifecycleOwner) {

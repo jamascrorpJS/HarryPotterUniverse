@@ -11,7 +11,6 @@ import com.jamascrorp.harrypotteruniverse.databinding.FragmentBinding
 import com.jamascrorp.harrypotteruniverse.presentation.BackgroundVoice
 
 class Fragment : Fragment() {
-
     private var viewBinding: FragmentBinding? = null
     private val binding get() = viewBinding!!
 
@@ -40,6 +39,11 @@ class Fragment : Fragment() {
         binding.perso.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_to_aboutCharsFragment)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activity?.startService(BackgroundVoice.intent(activity?.applicationContext!!))
     }
 
     override fun onPause() {
